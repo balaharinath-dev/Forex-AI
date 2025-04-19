@@ -138,7 +138,7 @@ class ForexAnalysisSystem:
         
         # Initialize LLM
         self.llm = GoogleGenerativeAI(
-            model="gemini/gemini-1.5-flash",
+            model="gemini/gemini-2.0-flash-lite",
             google_api_key=self.gemini_api_key,
             temperature=0.3,
             top_p=0.8,
