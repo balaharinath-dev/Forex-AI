@@ -1,4 +1,8 @@
-import pysqlite3 as sqlite3
+import sys
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+# Rest of your imports and code below
 import os
 import json
 import time
