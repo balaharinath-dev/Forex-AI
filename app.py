@@ -1,4 +1,3 @@
-import pysqlite3 as sqlite3
 import os
 import json
 import time
