@@ -5,3 +5,4 @@ langchain-google-genai
 pydantic
 python-dotenv
 chromadb==0.2.0
+pymysqlite
