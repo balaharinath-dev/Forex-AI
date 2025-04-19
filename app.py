@@ -40,7 +40,7 @@ class ExchangeRateTool(BaseTool):
     def _run(self, currency_pair: str) -> Dict[str, Any]:
         """Get the current exchange rate between two currencies."""
         base_currency, target_currency = currency_pair.split(',')
-        api_key = st.secrets("EXCHANGE_RATE_API_KEY", "")
+        api_key = st.secrets["EXCHANGE_RATE_API_KEY", ""]
         url = f"https://v6.exchangerate-api.com/v6/{api_key}/pair/{base_currency}/{target_currency}"
         
         try:
@@ -134,7 +134,7 @@ class ForexAnalysisSystem:
     
     def __init__(self):
         """Initialize the system with required models and tools."""
-        self.gemini_api_key = st.secrets("GEMINI_API_KEY", "")
+        self.gemini_api_key = st.secrets["GEMINI_API_KEY", ""]
         
         # Initialize LLM
         self.llm = GoogleGenerativeAI(
@@ -321,11 +321,11 @@ def main():
     
     # Check API keys
     missing_keys = []
-    if not st.secrets("EXCHANGE_RATE_API_KEY"):
+    if not st.secrets["EXCHANGE_RATE_API_KEY"]:
         missing_keys.append("Exchange Rate API Key")
-    if not st.secrets("NEWS_API_KEY"):
+    if not st.secrets["NEWS_API_KEY"]:
         missing_keys.append("News API Key")
-    if not st.secrets("GEMINI_API_KEY"):
+    if not st.secrets["GEMINI_API_KEY"]:
         missing_keys.append("Gemini API Key")
     
     if missing_keys:
